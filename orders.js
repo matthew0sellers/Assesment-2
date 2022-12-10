@@ -30,7 +30,13 @@
 */
 
 //CODE HERE
-
+class Ticket {
+    constructor(items, orderTime, customerId){
+    this.items = items;
+    this.orderTime = orderTime;
+    this.customerId = customerId;
+}
+}
 
 
 /*

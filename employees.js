@@ -20,6 +20,15 @@
 */
 
 //CODE HERE
+class Employee {
+    constructor(name, shifts){
+        this.name = name
+        this.shifts = shifts
+    }
+    getSchedule () {
+        console.log(`${this.name} works on ${this.shifts}`)
+    }
+}
 
 
 
@@ -34,6 +43,7 @@
 */
 
 //CODE HERE
+const empOne = new Employee('Jess', 'weekday mornings, weekday afternoons')
 
 /*
     Call the `getSchedule` method on the
@@ -41,7 +51,7 @@
 */
 
 //CODE HERE
-
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -56,7 +66,7 @@
 */
 
 //CODE HERE
-
+const empTwo = {...empOne, name: 'Nick'}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -84,7 +94,31 @@
 
 //CODE HERE
 
-
+// class Manager extends Employee {
+//     constructor(name, shifts, employees){
+//         this.name = name;
+//         this.shifts = shifts;
+//         this.employees = employees;
+//     }
+//     getEmployees () {
+//         console.log(`${this.name} manages ${this.employees}`)
+//     }
+//     addEmployee (emp) {
+//         let emp = new Employee
+//     }
+// }
+class Manager extends Employee {
+    constructor(name, shifts, employees) {
+        super(name, shifts)
+        this.employees = employees;
+    }
+    getEmployees () {
+        console.log(`${this.name} manages ${this.employees}`)
+    }
+    addEmployee (emp) {
+        this.employees.push(emp)
+    }
+}
 
 /*
     Create a new instance of your class.
@@ -98,7 +132,8 @@
 */
 
 //CODE HERE
-
+// let mana = new Manager('Winston', 'weekday mornings, weekday afternoons', 'Cece and Schmidt')
+const manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece and Schmidt']) //push method only works on arrays - so use brackets to turn into array
 
 /*
     Call the `getEmployees` method on the
@@ -106,6 +141,8 @@
 */
 
 //CODE HERE
+manager.getEmployees()
+
 
 /*
     Call the `addEmployee` method on the 
@@ -113,7 +150,8 @@
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
+//CODE HERE  
+manager.addEmployee(' Coach')
 
 /*
     Call the `getEmployees` method on the
@@ -121,4 +159,5 @@
     that an employee was added.
 */
 
+manager.getEmployees()
 //CODE HERE

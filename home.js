@@ -25,7 +25,7 @@
 let username = 'max'
 const greetUser = username => `welcome back ${username}`
 
-console.log(greetUser())
+console.log(greetUser(username))
 
 
 
@@ -55,7 +55,17 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
-
+const canWeDeliver = zipCode => {
+for (i = 0; i < deliveryAreaZipCodes.length; i++) {
+    if (deliveryAreaZipCodes[i] = zipCode) {
+    return `You're in our delivery zone!`
+}   else {
+    return `Sorry, we can't deliver to that address`
+}
+}
+}
+console.log(canWeDeliver(85805))
+canWeDeliver(84606) 
 
 /* 
     Problem 2 Continued
@@ -75,6 +85,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+const canWeDeliver2 = x => {
+    if (deliveryAreaZipCodes.includes(x)) {
+        return `Sorry, we can't deliver to that address`
+    } else {
+        return `You're in our delivery zone!`
+    }
+}
+console.log(canWeDeliver2(84606))
+
 
 
 //////////////////PROBLEM 3////////////////////
@@ -111,7 +130,7 @@ const deals = [
 */
 
 //CODE HERE
-
+deals.replace('15%', '10%')
 
 
 /*
@@ -127,4 +146,7 @@ const deals = [
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+// CODE HERE
+deals.replace('March', 'April')
+
+console.log(deals())

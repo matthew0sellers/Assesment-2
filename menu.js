@@ -32,7 +32,15 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: 'Matt',
+    price: 25,
+    category: 'food',
+    popularity: 10,
+    rating: 1,
+    tags: ['pineapple', 'pepperoni', 'bagel']
+  }
+  
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,7 +51,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.price)
 
 /*
     Third, destructure the price off of the
@@ -63,8 +71,9 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza
+pizza.price = 12
+console.log(pizza.price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +82,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+console.log(pizza.category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +98,13 @@
 */
 
 //CODE HERE
-
+const foodArr = {
+    price: 14,
+    category: 'food',
+    popularity: 7,
+    rating: 4,
+    tags: ['arrayItem', 'arrayItem2', 'arrayItem3']
+}
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,9 +121,18 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFoods = foodArr.filter(food => food.tags.includes('arrayItem'))
 
+// let {tags} = foodArr
 
+// const showTags = (tags, foodArr) => {
+//     foodArr.filter(tags => {
+//         return 'true'
+//     })
+// }
+
+// showTags('arrayItem')
+// console.log(showTags)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,7 +174,11 @@
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type) {
+    return sushi.filter((food) => {
+        if (type === 'above')
+    })
+}
 
 /*
     Invoke the `filterByProperty` function passing
