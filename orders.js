@@ -24,7 +24,7 @@
     to be the new status that was sent in. Then
     console.log something like: 
     'The order for customer [CUSTOMERID] is
-    now [STATUS].'
+    now [STATUS].'*-
     Where CUSTOMERID and STATUS reference the values
     stored on the object.
 */
@@ -35,6 +35,10 @@ class Ticket {
     this.items = items;
     this.orderTime = orderTime;
     this.customerId = customerId;
+}   
+    updateStatus (status) {
+    this.status = status;
+    return `The order for customer ${this.customerId} is now ${this.status}`
 }
 }
 
@@ -51,7 +55,7 @@ class Ticket {
 */
 
 //CODE HERE
-
+const firstTicket = new Ticket('pizza, bread, and soda', '7:03', 575)
 
 /*
     Call the `updateStatus` method on
@@ -60,3 +64,5 @@ class Ticket {
 */
 
 //CODE HERE
+
+console.log(firstTicket.updateStatus('cooking'))

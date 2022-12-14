@@ -35,8 +35,9 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
 
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,9 +55,12 @@ const cart = [
 */
 
 //CODE HERE
+const calcFinalPrice = (carTotal, couponValue, tax) => {
+    tax = carTotal * tax;
+    return tax + carTotal - couponValue;
+}
 
-
-
+console.log(calcFinalPrice(2000, 200, .06))
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -80,6 +84,9 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+customer object shoes
+the datatypes should be color-string, size-number, price-number, brand-string
+
 */
 
 /*
@@ -88,3 +95,11 @@ const cart = [
 */
 
 //CODE HERE
+const shoes = [
+    {
+        color: 'red', 
+        size: 9.99,
+        price: 9.99,
+        brand: 'nike'
+    }, 
+]

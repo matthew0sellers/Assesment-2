@@ -33,9 +33,9 @@
 //CODE HERE
 
 const pizza = {
-    name: 'Matt',
+    name: 'Peppizza',
     price: 25,
-    category: 'food',
+    category: 'entree',
     popularity: 10,
     rating: 1,
     tags: ['pineapple', 'pepperoni', 'bagel']
@@ -61,7 +61,7 @@ console.log(pizza.popularity)
 */
 
 //CODE HERE
-console.log(pizza.price)
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -71,7 +71,7 @@ console.log(pizza.price)
 */
 
 //CODE HERE
-let {price} = pizza
+let {price} = pizza;
 pizza.price = 12
 console.log(pizza.price)
 /*
@@ -82,8 +82,8 @@ console.log(pizza.price)
 */
 
 //CODE HERE
-let {category} = pizza
-console.log(pizza.category)
+const {category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -98,14 +98,48 @@ console.log(pizza.category)
 */
 
 //CODE HERE
-const foodArr = {
+const sushi = [
+{
+    name: "spicy tuna roll",
     price: 14,
-    category: 'food',
+    category: 'roll',
     popularity: 7,
     rating: 4,
-    tags: ['arrayItem', 'arrayItem2', 'arrayItem3']
-}
-
+    tags: ['adults', 'delicious', 'spicy']
+},
+{
+    name: "california roll",
+    price: 14,
+    category: 'roll',
+    popularity: 7,
+    rating: 4,
+    tags: ['adults', 'very-delicious', 'avocado']
+},
+{
+    name: "tuna roll",
+    price: 14,
+    category: 'roll',
+    popularity: 7,
+    rating: 4,
+    tags: ['adults', 'delicious', 'spicy']
+},
+{
+    name: "spicy roll",
+    price: 14,
+    category: 'roll',
+    popularity: 7,
+    rating: 5,
+    tags: ['adults', 'delicious', 'spicy']
+},
+{
+    name: "dragon roll",
+    price: 14,
+    category: 'roll',
+    popularity: 7,
+    rating: 4,
+    tags: ['adults', 'eel', 'rice']
+},
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -121,7 +155,8 @@ const foodArr = {
 
 //CODE HERE
 
-const filteredFoods = foodArr.filter(food => food.tags.includes('arrayItem'))
+const filteredFoods = sushi.filter((food) => food.tags.includes('eel'))
+console.log(filteredFoods);
 
 // let {tags} = foodArr
 
@@ -176,9 +211,19 @@ const filteredFoods = foodArr.filter(food => food.tags.includes('arrayItem'))
 //CODE HERE
 function filterByProperty(property, number, type) {
     return sushi.filter((food) => {
-        if (type === 'above')
-    })
+        if (type === 'above') {
+            return food[property] > number;
+        } else if (type === 'below') {
+            return food[property] < number;
+        }
+    });
 }
+
+// function filterByProperty(property, number, type) {
+//     return sushi.filter((food) => {
+//         if (type === 'above')
+//     }
+// }
 
 /*
     Invoke the `filterByProperty` function passing
@@ -188,3 +233,4 @@ function filterByProperty(property, number, type) {
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 4.5, 'above'))
